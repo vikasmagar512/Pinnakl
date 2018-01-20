@@ -4,6 +4,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 import {SearchService} from './search.service';
+import {Stock} from '../Stock';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ import {SearchService} from './search.service';
 })
 export class SearchComponent implements OnInit {
 
-  results: any[] = ['VIKAS'];
+  stocks: Stock[] = [];
   queryField: FormControl = new FormControl();
   constructor(private _searchService: SearchService) { }
 
@@ -20,12 +21,11 @@ export class SearchComponent implements OnInit {
     this.queryField.valueChanges
       .debounceTime(200)
       .distinctUntilChanged()
-      .switchMap((query) =>  {
-        alert(`query ${query}`)
-        return this._searchService.search(query)}
+      .switchMap((query) => {
+          return this._searchService.searchStocks(query)
+        }
       )
-      .subscribe( result => {  if (result.status === 400) { return; } else { this.results = result.json().artists.items; }
-    });
-
+      .subscribe(stocks => this.stocks = stocks);
+  }
 }
 

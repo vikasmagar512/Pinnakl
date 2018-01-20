@@ -1,4 +1,6 @@
-export class Stock{
-  id: number;
-  name: string;
+export class Stock {
+  secType: string;
+  Ticker: string;
+  Cusip: string;
+  Description: string;
 }
