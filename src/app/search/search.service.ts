@@ -18,10 +18,11 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   /** GET stock by Description. Will 404 if id not found */
-  getStock(id: number): Observable<Stock> {
-    const url = `${this.stocksUrl}/${id}`;
-    return this.http.get<Stock>(url).pipe(
-      catchError(this.handleError<Stock>(`getStock id=${id}`))
+  getStock(Cusip: string): Observable<Stock> {
+    console.log(Cusip)
+    // const url = `${this.stocksUrl}/${Cusip}`;
+    return this.http.get<Stock>(`api/stocks/?Cusip=${Cusip}`).pipe(
+      catchError(this.handleError<Stock>(`getStock Cusip=${Cusip}`))
     );
   }
 

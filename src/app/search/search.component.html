@@ -4,12 +4,14 @@
     <input [formControl]="queryField" type="text" id="keyword" placeholder="search for stocks..." autofocus/>
   </div>
 
-  <ul class="filter-select">
-    <li *ngFor="let result of stocks" class="filter-select-list">
-      <img src="https://docs.microsoft.com/en-gb/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png" width="50" height="50" alt="Cloud Shell in the portal" >
-      <p class="artist-name">
-        {{result.Description}}
-      </p>
+  <ul class="filter-select" *ngIf="stocks.length">
+    <li *ngFor="let stock of stocks" class="filter-select-list">
+      <a class="col-1-4" routerLink="/search/{{stock.Cusip}}" (click)="hideDropDown()">
+        <img src="https://docs.microsoft.com/en-gb/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png" width="50" height="50" alt="Cloud Shell in the portal" >
+        <p class="artist-name">
+          {{stock.Description}}
+        </p>
+      </a>
     </li>
   </ul>
 </section>
