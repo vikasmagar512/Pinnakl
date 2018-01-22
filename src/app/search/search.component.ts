@@ -13,11 +13,12 @@ import {Stock} from '../Stock';
 })
 export class SearchComponent implements OnInit {
 
-  stocks: Stock[] = [];
   queryField: FormControl = new FormControl();
-  constructor(private _searchService: SearchService){}
+  constructor(private _searchService: SearchService){
+  }
+  stocks: Stock[] = [];
 
-  hideDropDown(){
+  hideList() {
     this.stocks = [];
   }
   ngOnInit() {

@@ -27,7 +27,7 @@ import { DetailComponent } from './detail/detail.component';
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: 0  }
     ),
     AppRoutingModule
   ],

@@ -6,11 +6,11 @@ import {AppComponent} from './app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
-  { path: 'search', component: AppComponent,
-  // { path: 'search/:Cusip', component: DetailComponent}
-  children: [
+  // { path: 'search', component: AppComponent,
+  { path: 'search/:Cusip', component: DetailComponent
+  /*children: [
     { path: 'search/:Cusip', component: DetailComponent},
-  ]}
+  ]*/}
 ];
 
 @NgModule({

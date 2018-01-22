@@ -1,17 +1,20 @@
 
-<section class="filter-wrapper">
   <div class="keyword-wrapper">
     <input [formControl]="queryField" type="text" id="keyword" placeholder="search for stocks..." autofocus/>
   </div>
 
-  <ul class="filter-select" *ngIf="stocks.length">
+  <ul class="filter-select" *ngIf="stocks.length" style="z-index: 10000;">
+  <!--<ul class="filter-select">-->
     <li *ngFor="let stock of stocks" class="filter-select-list">
-      <a class="col-1-4" routerLink="/search/{{stock.Cusip}}" (click)="hideDropDown()">
-        <img src="https://docs.microsoft.com/en-gb/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png" width="50" height="50" alt="Cloud Shell in the portal" >
-        <p class="artist-name">
+      <a class="link" routerLink="/search/{{stock.Cusip}}" (click)="hideList()">
+        <p style="color: black">
           {{stock.Description}}
         </p>
+        <div style="color: grey;">
+          <span>{{stock.SecType}}</span>
+          <span>{{stock.Ticker}}</span>
+          <span>{{stock.Cusip}}</span>
+        </div>
       </a>
     </li>
   </ul>
-</section>

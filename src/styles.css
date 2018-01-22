@@ -14,11 +14,15 @@
 html,
 body {
   /*this will give a vertical scrollbar by default, so there isn't a little jump when you start entering search terms*/
-  height: calc(100% + 1px)
+  /*height: calc(100% + 1px)*/
+  height: 100%
 }
 
 body {
   font: 100% 'Arimo', sans-serif;
+}
+a{
+  text-decoration: none;
 }
 
 .filter-wrapper,
@@ -51,19 +55,6 @@ body {
   border-color : rgba(81, 203, 238, 1);;
 }
 
-#keyword-button {
-  position: absolute;
-  right: 26%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.7em;
-  color: #8DB9ED
-}
-
-#keyword-button:hover {
-  color: #ccc
-}
-
 .filter-select {
   width: 50%;
   list-style: none;
@@ -76,22 +67,10 @@ body {
   left: 25%;
   /*Since we know the wrapper will always be 100% height, we can use half of 100% + half the height of the input*/
   top: calc(50% + 25px);
-  /*for a better calculation use JS.  I'm calculating half of the body height - half the height of the input - li padding*/
+  /* I'm calculating half of the body height - half the height of the input - li padding*/
   max-height: calc(50% - 15px);
   overflow-y: auto;
   background: #fff
-}
-.filter-select-list img {
-  margin-right: 30px;
-}
-
-.tags {
-  font-size: 12px;
-  font-style: italic;
-  color: #c6c6c6;
-  margin-right: 10px;
-  position: relative;
-  top: -10px;
 }
 .filter-select-list:hover .tags {
   color: #fff;
@@ -100,11 +79,6 @@ body {
 .filter-select-list {
   cursor: pointer;
   padding: 5px 10px;
-}
-
-.artist-name {
-  display: inline-block;
-  position: absolute;
 }
 
 .filter-select-list:hover {
@@ -134,9 +108,6 @@ body {
     left: 10%;
     top: calc(50% + 23px);
   }
-  #keyword-button {
-    right: 11%
-  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -146,8 +117,5 @@ body {
   }
   .filter-select {
     left: 2.5%;
-  }
-  #keyword-button {
-    right: 3.5%
   }
 }

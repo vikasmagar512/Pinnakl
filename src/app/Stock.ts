@@ -1,5 +1,5 @@
 export class Stock {
-  secType: string;
+  SecType: string;
   Ticker: string;
   Cusip: string;
   Description: string;
