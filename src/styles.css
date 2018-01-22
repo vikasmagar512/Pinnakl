@@ -72,6 +72,14 @@ a{
   overflow-y: auto;
   background: #fff
 }
+.filter-select.detail{
+  border: none;
+  margin-top: 20px;
+}
+
+.filter-select.elevate{
+  z-index: 10000;
+}
 .filter-select-list:hover .tags {
   color: #fff;
 }
@@ -79,6 +87,13 @@ a{
 .filter-select-list {
   cursor: pointer;
   padding: 5px 10px;
+  color: grey;
+}
+.black{
+  color: black;
+}
+.grey{
+  color: grey;
 }
 
 .filter-select-list:hover {

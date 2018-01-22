@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
-import { SearchService } from './search/search.service';
+import { SearchService } from './search.service';
 
 import { HttpModule } from '@angular/http';
 import {ReactiveFormsModule} from '@angular/forms';

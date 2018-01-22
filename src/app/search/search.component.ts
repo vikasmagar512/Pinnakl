@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
-import {SearchService} from './search.service';
+import {SearchService} from '../search.service';
 import {Stock} from '../Stock';
 @Component({
   selector: 'app-search',

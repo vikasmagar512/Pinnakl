@@ -3,14 +3,13 @@
     <input [formControl]="queryField" type="text" id="keyword" placeholder="search for stocks..." autofocus/>
   </div>
 
-  <ul class="filter-select" *ngIf="stocks.length" style="z-index: 10000;">
-  <!--<ul class="filter-select">-->
+  <ul class="filter-select elevate" *ngIf="stocks.length">
     <li *ngFor="let stock of stocks" class="filter-select-list">
       <a class="link" routerLink="/search/{{stock.Cusip}}" (click)="hideList()">
-        <p style="color: black">
+        <p class="black">
           {{stock.Description}}
         </p>
-        <div style="color: grey;">
+        <div class="grey">
           <span>{{stock.SecType}}</span>
           <span>{{stock.Ticker}}</span>
           <span>{{stock.Cusip}}</span>

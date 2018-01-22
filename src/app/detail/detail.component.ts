@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Stock} from '../Stock';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { Location } from '@angular/common';
-import {SearchService} from '../search/search.service';
+import {SearchService} from '../search.service';
 import 'rxjs/add/operator/filter';
 
 @Component({

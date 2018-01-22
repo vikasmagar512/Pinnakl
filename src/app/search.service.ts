@@ -2,25 +2,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Stock} from '../Stock';
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import {Stock} from './Stock';
 
 @Injectable()
 export class SearchService {
-  private stocksUrl = 'api/stocks';  // URL to web api
 
   constructor(private http: HttpClient) { }
 
   /** GET stock by Description. Will 404 if id not found */
   getStock(Cusip: string): Observable<Stock> {
-    console.log(Cusip)
-    // const url = `${this.stocksUrl}/${Cusip}`;
     return this.http.get<Stock>(`api/stocks/?Cusip=${Cusip}`).pipe(
       catchError(this.handleError<Stock>(`getStock Cusip=${Cusip}`))
     );
@@ -32,7 +26,7 @@ export class SearchService {
       // if not search term, return empty stocks array.
       return of([]);
     }
-    return this.http.get<Stock[]>(`api/stocks/?Description=${term}`).pipe(
+    return this.http.get<Stock[]>(`api/stocks/?Description=^${term}`).pipe(
       catchError(this.handleError<Stock[]>('searchStocks', []))
     );
   }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {Stock} from './Stock';
-import {SearchService} from './search/search.service'
+import {SearchService} from './search.service'
 
 @Component({
   selector: 'app-root',
