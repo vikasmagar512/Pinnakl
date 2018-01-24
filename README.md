@@ -1,4 +1,12 @@
 # Pinnakl Assignment
+Live Code Editor Stackblitz
+ 
+Editor URL
+https://stackblitz.com/edit/pinnakl
+
+App URL
+https://pinnakl.stackblitz.io
+
 Q1 - Simply run `npm install && npm start`
       Now Head on to the browser and paste this URL in the address bar
        ```http://localhost:4200/```
