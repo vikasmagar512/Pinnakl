@@ -68,7 +68,8 @@ a{
   /*Since we know the wrapper will always be 100% height, we can use half of 100% + half the height of the input*/
   top: calc(50% + 25px);
   /* I'm calculating half of the body height - half the height of the input - li padding*/
-  max-height: calc(50% - 15px);
+  /*max-height: calc(50% - 15px);*/
+  max-height: 250px;
   overflow-y: auto;
   background: #fff
 }
